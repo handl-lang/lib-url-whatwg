@@ -13,3 +13,6 @@ pub const URL_WHATWG_SOURCES: &[(&str, &str, &[&str])] = &[
     ("slist", include_str!("internal/slist.hnl"), &["slen","take","drop","s_slice","s_len"]),
     ("parse", include_str!("parse.hnl"), &["parse"]),
 ];
+
+/// Flattened single-source `.hnl` (for `stdlib::MODULES` table rows).
+pub const URL_WHATWG_FLAT_HNL: &str = include_str!("index_flat.hnl");
