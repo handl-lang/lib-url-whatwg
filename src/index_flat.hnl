@@ -29,7 +29,7 @@ last_of := (s, c) ~> do {
 head_to := (s, i) ~> s_slice(s, 0, i)
 tail_from := (s, i) ~> s_slice(s, i, s_len(s) - i)
 
-export parse := (s) ~> do {
+url_whatwg_parse_impl := (s) ~> do {
   rest := s
   scheme := ""
   authority := ""
@@ -95,3 +95,6 @@ handle "url_whatwg.parse" with rust_url_whatwg_parse
 handle "url_whatwg.url_whatwg" with rust_url_whatwg_name
 
 --- pure-handl impl:
+
+export parse := url_whatwg_parse_impl
+export url_whatwg := () ~> ({ "type": "parser", "name": "url_whatwg", "parse": url_whatwg_parse_impl })
