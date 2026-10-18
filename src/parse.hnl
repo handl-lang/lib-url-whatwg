@@ -1,0 +1,79 @@
+--- `url_whatwg.parse` — strict RFC 3986 URI parser, pure handl.
+from "./internal/slist.hnl" import s_slice
+from "./internal/slist.hnl" import s_len
+
+--- index of first occurrence of any of chars `cs` in `s`, else -1.
+first_of := (s, cs) ~> do {
+  idx := -1
+  i := 0
+  for c in char.chars(s) { do {
+    if idx < 0 && str.find(cs, c) >= 0 { do { idx := i } } else { do {} }
+    i := i + 1
+  } }
+  idx
+}
+--- last index of `c` in `s`, else -1.
+last_of := (s, c) ~> do {
+  idx := -1
+  i := 0
+  for ch in char.chars(s) { do {
+    if ch == c { do { idx := i } } else { do {} }
+    i := i + 1
+  } }
+  idx
+}
+head_to := (s, i) ~> s_slice(s, 0, i)
+tail_from := (s, i) ~> s_slice(s, i, s_len(s) - i)
+
+export parse := (s) ~> do {
+  rest := s
+  scheme := ""
+  authority := ""
+  userinfo := ""
+  host := ""
+  port := ""
+  path := ""
+  query := ""
+  fragment := ""
+  -- scheme
+  ci := first_of(rest, ":")
+  if ci > 0 { do {
+    scheme := head_to(rest, ci)
+    rest := tail_from(rest, ci + 1)
+  } } else { do {} }
+  -- //authority
+  if s_len(rest) >= 2 && s_slice(rest, 0, 2) == "//" { do {
+    rest := tail_from(rest, 2)
+    ai := first_of(rest, "/?#")
+    if ai < 0 { do { ai := s_len(rest) } } else { do {} }
+    authority := head_to(rest, ai)
+    rest := tail_from(rest, ai)
+  } } else { do {} }
+  -- userinfo
+  ui := last_of(authority, "@")
+  if ui >= 0 { do {
+    userinfo := head_to(authority, ui)
+    authority := tail_from(authority, ui + 1)
+  } } else { do {} }
+  -- host:port
+  pi := last_of(authority, ":")
+  if pi >= 0 { do {
+    host := head_to(authority, pi)
+    port := tail_from(authority, pi + 1)
+  } } else { do { host := authority } }
+  -- fragment
+  fi := first_of(rest, "#")
+  if fi >= 0 { do {
+    fragment := tail_from(rest, fi + 1)
+    rest := head_to(rest, fi)
+  } } else { do {} }
+  -- query
+  qi := first_of(rest, "?")
+  if qi >= 0 { do {
+    query := tail_from(rest, qi + 1)
+    rest := head_to(rest, qi)
+  } } else { do {} }
+  path := rest
+  { scheme: scheme, authority: authority, userinfo: userinfo, host: host,
+    port: port, path: path, query: query, fragment: fragment }
+}

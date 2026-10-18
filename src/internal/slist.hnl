@@ -1,0 +1,5 @@
+export slen := (xs) ~> do { n := 0; for _ in xs { do { n := n + 1 } }; n }
+export take := (xs, n) ~> do { out := []; i := 0; for x in xs { do { if i < n { do { out := [...out, x] } } else { do {} }; i := i + 1 } }; out }
+export drop := (xs, n) ~> do { out := []; i := 0; for x in xs { do { if i >= n { do { out := [...out, x] } } else { do {} }; i := i + 1 } }; out }
+export s_slice := (s, i, n) ~> char.from_chars(take(drop(char.chars(s), i), n))
+export s_len := (s) ~> slen(char.chars(s))

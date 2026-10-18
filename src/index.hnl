@@ -9,3 +9,6 @@ op "url_whatwg.url_whatwg" : () -> Value
 
 handle "url_whatwg.parse" with rust_url_whatwg_parse
 handle "url_whatwg.url_whatwg" with rust_url_whatwg_name
+
+--- pure-handl impl:
+from "./parse.hnl" export parse
