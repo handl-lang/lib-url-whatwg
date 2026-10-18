@@ -1,0 +1,21 @@
+name: lib-url-whatwg
+root: /home/luis/GitHub/handl-lang/lib-url-whatwg
+purpose: ''
+modules:
+- handl-lib-url-whatwg
+- lib-url-whatwg
+commands:
+- cargo check
+- cargo test --workspace
+provenance:
+  files:
+  - Cargo.toml
+  - src/ops.rs
+  - src/lib.rs
+  hashes:
+  - d4600da24e59a7cadd50bf4ea69926694c425161
+  - 008a913a26d053c4179d042c66f1acf122011f69
+  - 6e7385af2cf8e2ac4fe21a0375a16157f12d54db
+  commit_sha: 7da65d9eeceb2e70cfda2a147d6cf72096b24282
+  generated_at: '1792281231'
+  generator: kuda/0.1.0

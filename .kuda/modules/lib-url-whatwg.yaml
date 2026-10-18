@@ -1,0 +1,185 @@
+name: lib-url-whatwg
+path: src/ops.rs
+purpose: lib-url-whatwg
+api:
+- name: URL_WHATWG_OPS
+  kind: const
+  file: src/ops.rs
+  line: 13
+  module: lib-url-whatwg
+- name: Whatwg
+  kind: type
+  file: src/ops.rs
+  line: 17
+  module: lib-url-whatwg
+- name: WebUrl
+  kind: type
+  file: src/ops.rs
+  line: 21
+  module: lib-url-whatwg
+- name: parse
+  kind: function
+  file: src/ops.rs
+  line: 26
+  module: lib-url-whatwg
+- name: parse
+  kind: function
+  file: src/ops.rs
+  line: 33
+  module: lib-url-whatwg
+- name: parse
+  kind: function
+  file: src/ops.rs
+  line: 49
+  module: lib-url-whatwg
+- name: as_str
+  kind: function
+  file: src/ops.rs
+  line: 54
+  module: lib-url-whatwg
+- name: scheme
+  kind: function
+  file: src/ops.rs
+  line: 59
+  module: lib-url-whatwg
+- name: host
+  kind: function
+  file: src/ops.rs
+  line: 64
+  module: lib-url-whatwg
+- name: port
+  kind: function
+  file: src/ops.rs
+  line: 69
+  module: lib-url-whatwg
+- name: path
+  kind: function
+  file: src/ops.rs
+  line: 74
+  module: lib-url-whatwg
+- name: query
+  kind: function
+  file: src/ops.rs
+  line: 79
+  module: lib-url-whatwg
+- name: fragment
+  kind: function
+  file: src/ops.rs
+  line: 84
+  module: lib-url-whatwg
+- name: UrlWhatwgParse
+  kind: type
+  file: src/ops.rs
+  line: 98
+  module: lib-url-whatwg
+- name: call
+  kind: function
+  file: src/ops.rs
+  line: 101
+  module: lib-url-whatwg
+- name: UrlWhatwgName
+  kind: type
+  file: src/ops.rs
+  line: 121
+  module: lib-url-whatwg
+- name: call
+  kind: function
+  file: src/ops.rs
+  line: 124
+  module: lib-url-whatwg
+- name: url_whatwg_op_registry
+  kind: function
+  file: src/ops.rs
+  line: 154
+  module: lib-url-whatwg
+- name: register
+  kind: function
+  file: src/ops.rs
+  line: 162
+  module: lib-url-whatwg
+- name: URL_WHATWG_HNL
+  kind: const
+  file: src/lib.rs
+  line: 3
+  module: lib-url-whatwg
+- name: ops
+  kind: module
+  file: src/lib.rs
+  line: 5
+  module: lib-url-whatwg
+deps:
+- handl_platform
+- handl_plugin_lib_handl
+- handl_lib_parse
+- serde_json
+notes: ''
+verify:
+- src/ops.rs
+- src/ops.rs
+- src/ops.rs
+- src/ops.rs
+- src/ops.rs
+- src/ops.rs
+- src/ops.rs
+- src/ops.rs
+- src/ops.rs
+- src/ops.rs
+- src/ops.rs
+- src/ops.rs
+- src/ops.rs
+- src/ops.rs
+- src/ops.rs
+- src/ops.rs
+- src/ops.rs
+- src/ops.rs
+- src/ops.rs
+- src/lib.rs
+- src/lib.rs
+provenance:
+  files:
+  - src/ops.rs
+  - src/ops.rs
+  - src/ops.rs
+  - src/ops.rs
+  - src/ops.rs
+  - src/ops.rs
+  - src/ops.rs
+  - src/ops.rs
+  - src/ops.rs
+  - src/ops.rs
+  - src/ops.rs
+  - src/ops.rs
+  - src/ops.rs
+  - src/ops.rs
+  - src/ops.rs
+  - src/ops.rs
+  - src/ops.rs
+  - src/ops.rs
+  - src/ops.rs
+  - src/lib.rs
+  - src/lib.rs
+  hashes:
+  - 008a913a26d053c4179d042c66f1acf122011f69
+  - 008a913a26d053c4179d042c66f1acf122011f69
+  - 008a913a26d053c4179d042c66f1acf122011f69
+  - 008a913a26d053c4179d042c66f1acf122011f69
+  - 008a913a26d053c4179d042c66f1acf122011f69
+  - 008a913a26d053c4179d042c66f1acf122011f69
+  - 008a913a26d053c4179d042c66f1acf122011f69
+  - 008a913a26d053c4179d042c66f1acf122011f69
+  - 008a913a26d053c4179d042c66f1acf122011f69
+  - 008a913a26d053c4179d042c66f1acf122011f69
+  - 008a913a26d053c4179d042c66f1acf122011f69
+  - 008a913a26d053c4179d042c66f1acf122011f69
+  - 008a913a26d053c4179d042c66f1acf122011f69
+  - 008a913a26d053c4179d042c66f1acf122011f69
+  - 008a913a26d053c4179d042c66f1acf122011f69
+  - 008a913a26d053c4179d042c66f1acf122011f69
+  - 008a913a26d053c4179d042c66f1acf122011f69
+  - 008a913a26d053c4179d042c66f1acf122011f69
+  - 008a913a26d053c4179d042c66f1acf122011f69
+  - 6e7385af2cf8e2ac4fe21a0375a16157f12d54db
+  - 6e7385af2cf8e2ac4fe21a0375a16157f12d54db
+  commit_sha: 7da65d9eeceb2e70cfda2a147d6cf72096b24282
+  generated_at: '1792281231'
+  generator: kuda-template/0.1.0
