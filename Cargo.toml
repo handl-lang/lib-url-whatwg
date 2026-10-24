@@ -19,3 +19,9 @@ handl-lib-parse = { path = "../lib-parse" }
 [patch."https://github.com/handl-lang/host"]
 handl-platform = { path = "../host/crates/platform" }
 handl-plugin-lib-handl = { path = "../host/crates/plugin-lib-handl" }
+# These are `path` deps inside `../host` (so the local copies always win for
+# the patched crates above) but also arrive as git deps transitively through
+# `hnl-engine-exec-bytecode` — patch them to the same checkouts or the graph
+# carries two `handl_runtime`s (`CompileEngine` trait mismatch).
+handl-plugin-module = { path = "../host/crates/plugin-module" }
+handl-runtime = { path = "../host/crates/handl-runtime" }

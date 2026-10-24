@@ -37,20 +37,13 @@ dependencies = [
 ]
 
 [[package]]
-name = "handl-kit-arrow-lower"
-version = "0.1.0"
-source = "git+https://github.com/handl-lang/host?branch=main#8af6cd0c74a1b0249104b5ae19eb983171fea389"
-dependencies = [
- "handl-language",
- "serde_json",
-]
-
-[[package]]
 name = "handl-language"
 version = "0.1.0"
-source = "git+https://github.com/handl-lang/kernel?branch=main#b3d3bfbbdfcf5eaa145b017a1b350ca7203c3633"
+source = "git+https://github.com/handl-lang/kernel?branch=main#286c50e265371f6a365167ec7254464bf9c726bd"
 dependencies = [
+ "handl-value",
  "hnl-engine",
+ "rustc-hash",
  "serde",
  "serde_json",
  "thiserror",
@@ -59,22 +52,22 @@ dependencies = [
 [[package]]
 name = "handl-lib-char"
 version = "0.1.0"
-source = "git+https://github.com/handl-lang/lib-char?branch=main#2f100b900a8272fa3893bf31261d0a67a3a8aad3"
+source = "git+https://github.com/handl-lang/lib-char?branch=main#c0f0f4054d22dc3090e04b7d47588aef1901cabd"
 
 [[package]]
 name = "handl-lib-desugar"
 version = "0.1.0"
-source = "git+https://github.com/handl-lang/lib-desugar?branch=main#a717669d040a76b212efa5a2218ada3231eeb0b5"
+source = "git+https://github.com/handl-lang/lib-desugar?branch=main#e1845e12869b04ef91871d31129ca23e7d3d864c"
 
 [[package]]
 name = "handl-lib-loader"
 version = "0.1.0"
-source = "git+https://github.com/handl-lang/lib-loader?branch=main#af01d60c31b743ba167924793f91a998ebf5a808"
+source = "git+https://github.com/handl-lang/lib-loader?branch=main#3960b588c2c2fbb502561273d4ff0ebb6a0a4417"
 
 [[package]]
 name = "handl-lib-ops"
 version = "0.1.0"
-source = "git+https://github.com/handl-lang/kernel?branch=main#b3d3bfbbdfcf5eaa145b017a1b350ca7203c3633"
+source = "git+https://github.com/handl-lang/kernel?branch=main#286c50e265371f6a365167ec7254464bf9c726bd"
 dependencies = [
  "handl-platform",
  "serde_json",
@@ -94,7 +87,7 @@ dependencies = [
 [[package]]
 name = "handl-lib-str-handl"
 version = "0.1.0"
-source = "git+https://github.com/handl-lang/lib-str-handl?branch=main#d030e90a0600cbd86d4b002b0961bb74089ac892"
+source = "git+https://github.com/handl-lang/lib-str-handl?branch=main#81b47154c67a5fd606286e1239951ac7868a74b7"
 
 [[package]]
 name = "handl-lib-url-whatwg"
@@ -111,6 +104,7 @@ dependencies = [
 name = "handl-platform"
 version = "0.1.0"
 dependencies = [
+ "handl-value",
  "semver",
  "serde",
  "serde_json",
@@ -121,7 +115,7 @@ dependencies = [
 [[package]]
 name = "handl-plugin-ext-diag"
 version = "0.1.0"
-source = "git+https://github.com/handl-lang/host?branch=main#8af6cd0c74a1b0249104b5ae19eb983171fea389"
+source = "git+https://github.com/handl-lang/host?branch=main#2ac2492cf0060117eb5f0a2fce6da5e098350a61"
 dependencies = [
  "handl-language",
  "handl-platform",
@@ -133,7 +127,7 @@ dependencies = [
 [[package]]
 name = "handl-plugin-lib-char-native"
 version = "0.1.0"
-source = "git+https://github.com/handl-lang/lib-char-native?branch=main#eb514a94c522c19decd4a14132357a38b6600b11"
+source = "git+https://github.com/handl-lang/lib-char-native?branch=main#12c59c1dc440419687b1261d40f20d379cceba7c"
 dependencies = [
  "handl-lib-char",
  "handl-platform",
@@ -151,7 +145,7 @@ dependencies = [
  "handl-platform",
  "handl-plugin-lib-char-native",
  "handl-plugin-module",
- "handl-runtime 0.1.0",
+ "handl-runtime",
  "handl-value",
  "hnl-engine",
  "hnl-engine-exec",
@@ -175,27 +169,7 @@ dependencies = [
 name = "handl-runtime"
 version = "0.1.0"
 dependencies = [
- "handl-kit-arrow-lower 0.1.0",
- "handl-language",
- "handl-platform",
- "handl-value",
- "hnl-engine",
- "hnl-engine-exec",
- "hnl-engine-lex",
- "hnl-engine-parse",
- "hnl-engine-transform-rewrite",
- "hnl-engine-typecheck",
- "rustc-hash",
- "serde",
- "serde_json",
-]
-
-[[package]]
-name = "handl-runtime"
-version = "0.1.0"
-source = "git+https://github.com/handl-lang/host?branch=main#8af6cd0c74a1b0249104b5ae19eb983171fea389"
-dependencies = [
- "handl-kit-arrow-lower 0.1.0 (git+https://github.com/handl-lang/host?branch=main)",
+ "handl-kit-arrow-lower",
  "handl-language",
  "handl-platform",
  "handl-value",
@@ -213,7 +187,7 @@ dependencies = [
 [[package]]
 name = "handl-value"
 version = "0.1.0"
-source = "git+https://github.com/handl-lang/kernel?branch=main#b3d3bfbbdfcf5eaa145b017a1b350ca7203c3633"
+source = "git+https://github.com/handl-lang/kernel?branch=main#286c50e265371f6a365167ec7254464bf9c726bd"
 dependencies = [
  "rustc-hash",
  "serde_json",
@@ -228,7 +202,7 @@ checksum = "ed5909b6e89a2db4456e54cd5f673791d7eca6732202bbf2a9cc504fe2f9b84a"
 [[package]]
 name = "hnl-engine"
 version = "0.1.0"
-source = "git+https://github.com/handl-lang/engine?branch=main#9f63ba3cf587fda5af9901a3953ca7e32c850861"
+source = "git+https://github.com/handl-lang/engine?branch=main#308ef2c19266d55b87c6235bee28e8d2a66fd8dc"
 dependencies = [
  "handl-value",
  "serde",
@@ -238,7 +212,7 @@ dependencies = [
 [[package]]
 name = "hnl-engine-exec"
 version = "0.1.0"
-source = "git+https://github.com/handl-lang/engine-exec?branch=main#1dfb5ebf2bc5810bf6d71fb4a5a67f98895ef48b"
+source = "git+https://github.com/handl-lang/engine-exec?branch=main#bf5337bf8bc4c6e9c393a4606c464e376e3a0865"
 dependencies = [
  "handl-language",
  "handl-platform",
@@ -250,11 +224,11 @@ dependencies = [
 [[package]]
 name = "hnl-engine-exec-bytecode"
 version = "0.1.0"
-source = "git+https://github.com/handl-lang/engine-exec-bytecode?branch=main#177f45c2a79d6c1b49fdae2f9c8c4d5afea03bef"
+source = "git+https://github.com/handl-lang/engine-exec-bytecode?branch=main#9555f5b839c96a23898c134e45996d0c6597c4a7"
 dependencies = [
  "handl-language",
  "handl-platform",
- "handl-runtime 0.1.0 (git+https://github.com/handl-lang/host?branch=main)",
+ "handl-runtime",
  "handl-value",
  "hnl-engine",
  "hnl-engine-exec",
@@ -268,7 +242,7 @@ dependencies = [
 [[package]]
 name = "hnl-engine-exec-tree-walk"
 version = "0.1.0"
-source = "git+https://github.com/handl-lang/engine-exec-tree-walk?branch=main#7df553459e0a7318fe47e9fa0381ef2545a0428e"
+source = "git+https://github.com/handl-lang/engine-exec-tree-walk?branch=main#eb5a8f9d1b4b0774c9b46c5bc48ac32e1d50a361"
 dependencies = [
  "handl-language",
  "handl-platform",
@@ -282,7 +256,7 @@ dependencies = [
 [[package]]
 name = "hnl-engine-lex"
 version = "0.1.0"
-source = "git+https://github.com/handl-lang/engine-lex?branch=main#3af64c9e139d841679b302132ef421b3a8503518"
+source = "git+https://github.com/handl-lang/engine-lex?branch=main#487a5441ebf76696c51e0fdeac3607d515f0e7ca"
 dependencies = [
  "handl-language",
  "serde_json",
@@ -291,7 +265,7 @@ dependencies = [
 [[package]]
 name = "hnl-engine-lex-pattern"
 version = "0.1.0"
-source = "git+https://github.com/handl-lang/engine-lex-pattern?branch=main#922319558232e663a91ea566eb3f64fdf823ad6b"
+source = "git+https://github.com/handl-lang/engine-lex-pattern?branch=main#8e95aa0c777f64670bd38a0af0fc97d2de87e046"
 dependencies = [
  "handl-language",
  "hnl-engine-lex",
@@ -300,7 +274,7 @@ dependencies = [
 [[package]]
 name = "hnl-engine-parse"
 version = "0.1.0"
-source = "git+https://github.com/handl-lang/engine-parse?branch=main#c03f14ef2a9d5151b5117e1141260377270e70f8"
+source = "git+https://github.com/handl-lang/engine-parse?branch=main#5014e8a4dac8fdf5254c4e0bd520349b4cd773f3"
 dependencies = [
  "handl-language",
  "serde_json",
@@ -309,7 +283,7 @@ dependencies = [
 [[package]]
 name = "hnl-engine-parse-pratt"
 version = "0.1.0"
-source = "git+https://github.com/handl-lang/engine-parse-pratt?branch=main#7c141cdc524e096682f26e7fe153de85069f923a"
+source = "git+https://github.com/handl-lang/engine-parse-pratt?branch=main#e49e10f625a91c603df4cd159dba14d38470de4a"
 dependencies = [
  "handl-language",
  "hnl-engine-parse",
@@ -319,7 +293,7 @@ dependencies = [
 [[package]]
 name = "hnl-engine-transform"
 version = "0.1.0"
-source = "git+https://github.com/handl-lang/engine-transform?branch=main#fc296ef55a08292834b77a7cb09a2cb494d35227"
+source = "git+https://github.com/handl-lang/engine-transform?branch=main#a3da7a9fda9fab25ecc047c653ffccd3cc4f9495"
 dependencies = [
  "handl-language",
  "handl-plugin-ext-diag",
@@ -329,9 +303,10 @@ dependencies = [
 [[package]]
 name = "hnl-engine-transform-rewrite"
 version = "0.1.0"
-source = "git+https://github.com/handl-lang/engine-transform-rewrite?branch=main#5d114fac5dceb48a57d1ecb6e672a80d7fbcfe72"
+source = "git+https://github.com/handl-lang/engine-transform-rewrite?branch=main#62ea51a8bed235073fa1d1c87cc8fdbf08a6727f"
 dependencies = [
  "handl-language",
+ "handl-value",
  "hnl-engine-transform",
  "serde_json",
 ]
@@ -339,7 +314,7 @@ dependencies = [
 [[package]]
 name = "hnl-engine-typecheck"
 version = "0.1.0"
-source = "git+https://github.com/handl-lang/engine-typecheck?branch=main#eb1f5dd00e08e5693dbf3df5e72f1bac41cea9e2"
+source = "git+https://github.com/handl-lang/engine-typecheck?branch=main#35bf9cb2309c5b60f45c7da914f42a66c77e5353"
 dependencies = [
  "handl-language",
  "handl-platform",
@@ -352,9 +327,9 @@ dependencies = [
 
 [[package]]
 name = "icu_collections"
-version = "2.3.0"
+version = "2.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "fa68d21081c4a05d5a901a1c62add574c77048b6a1c67be3b50ce0b60d4ca513"
+checksum = "fe090a42a0d3140fed8c63263ed1fecc02422cb2f4bfe55cd8de2de1b8e105dd"
 dependencies = [
  "displaydoc",
  "potential_utf",
@@ -366,9 +341,9 @@ dependencies = [
 
 [[package]]
 name = "icu_locale_core"
-version = "2.3.0"
+version = "2.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d56e28588da92eee5c3201a6eff33fabdd49b62269c8938d4ff050ce4d900deb"
+checksum = "25d29b57c17c6528d0dc4c2141cfa2d08200465acb537a3909c8b9b8a4a984c0"
 dependencies = [
  "displaydoc",
  "litemap",
@@ -379,9 +354,9 @@ dependencies = [
 
 [[package]]
 name = "icu_normalizer"
-version = "2.3.0"
+version = "2.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "12f9cf5f235641ed274641dd81c3f28d870e276763d0797aeeab72317b1c646f"
+checksum = "404a3b8c486f205c87fe7f23ab6894d84a4ad76d6e4671ae1981ba7def87c599"
 dependencies = [
  "icu_collections",
  "icu_normalizer_data",
@@ -393,15 +368,15 @@ dependencies = [
 
 [[package]]
 name = "icu_normalizer_data"
-version = "2.3.0"
+version = "2.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1563da1ed3e0b3bf3d74c9b85917ac9c56464d2f57242270c09c9e752f8021a0"
+checksum = "20f0088bfb7441f7a37fa0c9e20cb1e9cba1cac6b9ce8cd2a6dc44294f8e8cbc"
 
 [[package]]
 name = "icu_properties"
-version = "2.3.0"
+version = "2.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7e7ca276ad3145661a65914e6daf131ca5120cd3dcee8f8f3214b8875184a148"
+checksum = "2ea83d991c56158f7cf898bf86436c1dfe7c07ee82fe88951f2695c9f37a379f"
 dependencies = [
  "displaydoc",
  "icu_collections",
@@ -414,15 +389,15 @@ dependencies = [
 
 [[package]]
 name = "icu_properties_data"
-version = "2.3.0"
+version = "2.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e590f038c1464a96894fd6d10127e90a8be4509f56ff7ecef851b15cee0b7caa"
+checksum = "b98f29af82d02b163fe50161388350e743bb3107cc8e8c2f7314cb505faddfcf"
 
 [[package]]
 name = "icu_provider"
-version = "2.3.1"
+version = "2.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d27bbb9d3abbefac45d55f647c9de1d44aafcd1186eb91879afef17c396c3e73"
+checksum = "413099315636c588ee8f011190b329b971a09a8fae9d157e01dcae8379468514"
 dependencies = [
  "displaydoc",
  "icu_locale_core",
@@ -581,9 +556,9 @@ dependencies = [
 
 [[package]]
 name = "smallvec"
-version = "1.16.3"
+version = "1.16.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "5b3dc8af474f516a851ff4bd12db780f948b9250ad37211e4eec0bccea54e01b"
+checksum = "d0d5d4b1981b8bbbb7aed204cae5726d683d5d6ac7e74ec54122ea28f315e7c8"
 
 [[package]]
 name = "stable_deref_trait"
@@ -635,9 +610,9 @@ dependencies = [
 
 [[package]]
 name = "tinystr"
-version = "0.8.4"
+version = "0.8.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b1e27c91459209c2986af3dcf603a5a74a4368754ce37414f59acc971167f643"
+checksum = "abc840c238154d58f9e86b2792261edfde565a17696e1cda1a449de27979801a"
 dependencies = [
  "displaydoc",
  "zerovec",
@@ -725,9 +700,9 @@ checksum = "3ad82d2a33cdc9674dc7465672f271e096168fcdbe0f799d9e6db8c5892679dc"
 
 [[package]]
 name = "yoke"
-version = "0.8.3"
+version = "0.8.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "709fe23a0424b6a435d82152b1bd3fdfb0833487d5fa90d05d42762a9891fef5"
+checksum = "417ef3fcf6c300b7dbd25c85531a746931c02ad536f3cf4786ed1e88223340b3"
 dependencies = [
  "stable_deref_trait",
  "yoke-derive",
@@ -780,9 +755,9 @@ dependencies = [
 
 [[package]]
 name = "zerovec"
-version = "0.11.8"
+version = "0.11.9"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "bb0464e17806c1d976d5cba29399c7f08e516e279e2ba493f63123b5fca67dd8"
+checksum = "f58a2799cfe9a1670c7ea8edbd52ef8edb93cb37a7f83bf31ba9e35d9dae6a40"
 dependencies = [
  "yoke",
  "zerofrom",
@@ -791,9 +766,9 @@ dependencies = [
 
 [[package]]
 name = "zerovec-derive"
-version = "0.11.6"
+version = "0.11.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "34df6fc39dbd26ddc9c10e6a2984476e13acce22e64e4487636ef494369225da"
+checksum = "c3743ddbf47738d929cd1ae2e199d40d0162979dfe31aef8ae646d2bf00bf97a"
 dependencies = [
  "proc-macro2",
  "quote",
