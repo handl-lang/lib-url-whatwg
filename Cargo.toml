@@ -2,9 +2,11 @@
 name = "handl-lib-url-whatwg"
 version = "0.1.0"
 edition = "2024"
-description = "url_whatwg: URL parser for the parse port (ADR-0128 split)."
-license = "MIT OR Apache-2.0"
+description = "url_whatwg: URL parser for the parse port."
+license = "MIT"
 repository = "https://github.com/handl-lang/lib-url-whatwg"
+homepage = "https://github.com/handl-lang/lib-url-whatwg"
+readme = "README.md"
 
 [dependencies]
 url = "2"
