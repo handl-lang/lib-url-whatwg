@@ -2,9 +2,9 @@
 --- url_whatwg.url_whatwg -- return the parser token for url_whatwg.
 cap "url_whatwg.parse"
 cap "url_whatwg.url_whatwg"
-op "url_whatwg.parse" : String -> Value
+op "url_whatwg.parse" : String ~> Value
   guarantee: True
-op "url_whatwg.url_whatwg" : () -> Value
+op "url_whatwg.url_whatwg" : () ~> Value
   guarantee: True
 
 handle "url_whatwg.parse" with parse
