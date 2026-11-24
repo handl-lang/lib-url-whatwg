@@ -1,10 +1,10 @@
 from "./index" import * as m
 u := m.parse("https://user@example.com:8080/a/b?x=1#frag")
-test_scheme := assert u.scheme = "https"
-test_user := assert u.userinfo = "user"
-test_host := assert u.host = "example.com"
-test_port := assert u.port = "8080"
-test_path := assert u.path = "/a/b"
-test_query := assert u.query = "x=1"
-test_frag := assert u.fragment = "frag"
-test_rel := assert m.parse("/a/b").path = "/a/b"
+test_scheme := assert u.scheme == "https"
+test_user := assert u.userinfo == "user"
+test_host := assert u.host == "example.com"
+test_port := assert u.port == "8080"
+test_path := assert u.path == "/a/b"
+test_query := assert u.query == "x=1"
+test_frag := assert u.fragment == "frag"
+test_rel := assert m.parse("/a/b").path == "/a/b"
