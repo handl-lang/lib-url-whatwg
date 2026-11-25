@@ -11,7 +11,7 @@
 | `src/parse.hnl` | the parser implementation |
 | `src/internal/slist.hnl` | shared internals |
 | `src/url_whatwg.test.hnl` | the .hnl test suite |
-| `pkg.hnl`, `scripts/hnl-gate.sh`, `ci.sh` | manifest / gate / bupha entry |
+| `pkg.hnl`, `scripts/hnl-gate.sh`, `workflows/gate.yaml` | manifest / gate / bupha entry |
 
 ## Contract
 
